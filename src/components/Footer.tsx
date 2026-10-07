@@ -1,4 +1,5 @@
 import { Logo } from "@/components/Logo";
+import { UiIcon } from "@/components/icons";
 import { booking, footer, nav, studio } from "@/content/site";
 
 export function Footer() {
@@ -35,12 +36,14 @@ export function Footer() {
           <div>
             <p className="label text-ivory/50">{footer.contactLabel}</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li>
+              <li className="flex items-center gap-2.5">
+                <UiIcon name="mail" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />
                 <a href={`mailto:${studio.email}`} className="transition-colors hover:text-ivory">
                   {studio.email}
                 </a>
               </li>
-              <li>
+              <li className="flex items-center gap-2.5">
+                <UiIcon name="instagram" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />
                 <a
                   href={studio.instagramUrl}
                   target="_blank"
@@ -50,8 +53,14 @@ export function Footer() {
                   {studio.instagram}
                 </a>
               </li>
-              <li>{studio.whatsapp}</li>
-              <li>{studio.area}</li>
+              <li className="flex items-center gap-2.5">
+                <UiIcon name="phone" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />
+                {studio.whatsapp}
+              </li>
+              <li className="flex items-center gap-2.5">
+                <UiIcon name="pin" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />
+                {studio.area}
+              </li>
             </ul>
           </div>
         </div>

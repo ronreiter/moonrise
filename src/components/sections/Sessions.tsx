@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { SessionIcon } from "@/components/icons";
 import { bookingHref, sessions } from "@/content/site";
 
 export function Sessions() {
@@ -24,8 +25,14 @@ export function Sessions() {
           {sessions.map((session, index) => (
             <Reveal key={session.number} delay={(index % 3) * 80}>
               <article className="group flex h-full flex-col rounded-2xl border border-hairline bg-ivory p-7 transition duration-300 hover:-translate-y-1 hover:border-ink/25 hover:shadow-[0_18px_40px_-24px_rgb(28_26_22/0.4)]">
-                <div className="flex items-baseline justify-between gap-4">
-                  <span className="label text-stone/60">{session.number}</span>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="flex items-center gap-3">
+                    <SessionIcon
+                      name={session.icon}
+                      className="h-[18px] w-[18px] text-ink/45 transition-colors duration-300 group-hover:text-ink/80"
+                    />
+                    <span className="label text-stone/60">{session.number}</span>
+                  </span>
                   <span className="label text-right text-stone/70">{session.meta}</span>
                 </div>
                 <h3 className="mt-6 font-serif text-[1.65rem] leading-tight">{session.name}</h3>

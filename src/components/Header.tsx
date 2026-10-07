@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
+import { UiIcon } from "@/components/icons";
 import { booking, nav, studio } from "@/content/site";
 
 export function Header() {
@@ -124,16 +125,18 @@ export function Header() {
             >
               {booking.label}
             </a>
-            <div className="flex flex-col gap-1 text-sm text-stone">
-              <a href={`mailto:${studio.email}`} className="hover:text-ink">
+            <div className="flex flex-col gap-2.5 text-sm text-stone">
+              <a href={`mailto:${studio.email}`} className="flex items-center gap-2.5 hover:text-ink">
+                <UiIcon name="mail" className="h-4 w-4" />
                 {studio.email}
               </a>
               <a
                 href={studio.instagramUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-ink"
+                className="flex items-center gap-2.5 hover:text-ink"
               >
+                <UiIcon name="instagram" className="h-4 w-4" />
                 {studio.instagram}
               </a>
             </div>

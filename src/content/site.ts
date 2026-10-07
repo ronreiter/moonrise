@@ -1,5 +1,21 @@
+export type SessionIconName =
+  | "wind"
+  | "stretch"
+  | "standing"
+  | "waves"
+  | "flame"
+  | "moon"
+  | "moonStar"
+  | "bell"
+  | "waveform"
+  | "coffee"
+  | "baby";
+
+export type UiIconName = "mail" | "instagram" | "phone" | "pin" | "clock";
+
 export type Session = {
   number: string;
+  icon: SessionIconName;
   name: string;
   meta: string;
   description: string;
@@ -97,6 +113,7 @@ export const about = {
 export const sessions: Session[] = [
   {
     number: "01",
+    icon: "wind",
     name: "Nervous System Reset",
     meta: "Restorative · 60 min",
     description:
@@ -104,6 +121,7 @@ export const sessions: Session[] = [
   },
   {
     number: "02",
+    icon: "stretch",
     name: "Pilates",
     meta: "Mat · 50 min",
     description:
@@ -111,6 +129,7 @@ export const sessions: Session[] = [
   },
   {
     number: "03",
+    icon: "standing",
     name: "Yoga",
     meta: "Hatha · 60 min",
     description:
@@ -118,6 +137,7 @@ export const sessions: Session[] = [
   },
   {
     number: "04",
+    icon: "waves",
     name: "Soft Flow",
     meta: "Vinyasa · 60 min",
     description:
@@ -125,6 +145,7 @@ export const sessions: Session[] = [
   },
   {
     number: "05",
+    icon: "flame",
     name: "Power Flow",
     meta: "Vinyasa · 60 min",
     description:
@@ -132,6 +153,7 @@ export const sessions: Session[] = [
   },
   {
     number: "06",
+    icon: "moon",
     name: "Yin Yoga",
     meta: "Yin · 75 min",
     description:
@@ -139,6 +161,7 @@ export const sessions: Session[] = [
   },
   {
     number: "07",
+    icon: "moonStar",
     name: "Yin & Reiki",
     meta: "Yin · Reiki · 75 min",
     description:
@@ -146,6 +169,7 @@ export const sessions: Session[] = [
   },
   {
     number: "08",
+    icon: "bell",
     name: "Sound Healing",
     meta: "Sound · 60 min",
     description:
@@ -153,6 +177,7 @@ export const sessions: Session[] = [
   },
   {
     number: "09",
+    icon: "waveform",
     name: "Sound Bath",
     meta: "Sound · 60 min",
     description:
@@ -160,6 +185,7 @@ export const sessions: Session[] = [
   },
   {
     number: "10",
+    icon: "coffee",
     name: "Cacao & Yoga Nidra",
     meta: "Ceremony · 90 min · Monthly",
     description:
@@ -167,6 +193,7 @@ export const sessions: Session[] = [
   },
   {
     number: "11",
+    icon: "baby",
     name: "Parental Yoga",
     meta: "Gentle · 60 min",
     description:
@@ -296,9 +323,9 @@ export const visit = {
     "The full address and directions are shared when you book — or message us and we’ll send you the way.",
   contactLabel: "Say hello",
   rows: [
-    { label: "Email", value: studio.email, href: bookingHref("Hello Moonrise") },
-    { label: "Instagram", value: studio.instagram, href: studio.instagramUrl },
-    { label: "WhatsApp", value: studio.whatsapp },
+    { label: "Email", icon: "mail" as const, value: studio.email, href: bookingHref("Hello Moonrise") },
+    { label: "Instagram", icon: "instagram" as const, value: studio.instagram, href: studio.instagramUrl },
+    { label: "WhatsApp", icon: "phone" as const, value: studio.whatsapp },
   ],
   hoursLabel: "Studio hours",
 };

@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { UiIcon } from "@/components/icons";
 import { studio, visit } from "@/content/site";
 import { rich } from "@/lib/rich";
 
@@ -15,7 +16,10 @@ export function Visit() {
           </Reveal>
 
           <Reveal delay={100}>
-            <p className="mt-8 font-serif text-2xl">{visit.area}</p>
+            <p className="mt-8 flex items-center gap-3 font-serif text-2xl">
+  <UiIcon name="pin" className="h-5 w-5 text-stone" />
+  {visit.area}
+</p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-stone">
               {visit.addressNote}
             </p>
@@ -29,7 +33,10 @@ export function Visit() {
                   key={row.label}
                   className="flex items-baseline justify-between gap-6 border-b border-hairline py-4"
                 >
-                  <span className="label text-stone">{row.label}</span>
+                  <span className="flex items-center gap-2.5 text-stone">
+  <UiIcon name={row.icon} className="h-4 w-4" />
+  <span className="label">{row.label}</span>
+</span>
                   {row.href ? (
                     <a
                       href={row.href}
@@ -48,7 +55,10 @@ export function Visit() {
           </Reveal>
 
           <Reveal delay={280}>
-            <p className="label mt-12 text-stone/60">{visit.hoursLabel}</p>
+            <p className="label mt-12 flex items-center gap-2.5 text-stone/60">
+  <UiIcon name="clock" className="h-4 w-4" />
+  {visit.hoursLabel}
+</p>
             <ul className="mt-2">
               {studio.hours.map((row) => (
                 <li
