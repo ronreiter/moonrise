@@ -30,6 +30,11 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/login" className="transition-colors hover:text-ivory">
+                  Studio login
+                </a>
+              </li>
             </ul>
           </nav>
 

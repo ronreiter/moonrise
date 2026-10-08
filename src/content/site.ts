@@ -1,3 +1,5 @@
+import sessionTypes from "./session-types.json";
+
 export type SessionIconName =
   | "wind"
   | "stretch"
@@ -19,12 +21,6 @@ export type Session = {
   name: string;
   meta: string;
   description: string;
-};
-
-export type ScheduleDay = {
-  day: string;
-  note?: string;
-  classes: { time: string; name: string; note?: string }[];
 };
 
 export type PricingOption = {
@@ -110,97 +106,7 @@ export const about = {
   ],
 };
 
-export const sessions: Session[] = [
-  {
-    number: "01",
-    icon: "wind",
-    name: "Nervous System Reset",
-    meta: "Restorative · 60 min",
-    description:
-      "Breath-led, floor-based and deliberately slow. Unwind the jaw and shoulders, and let your body remember what settled feels like.",
-  },
-  {
-    number: "02",
-    icon: "stretch",
-    name: "Pilates",
-    meta: "Mat · 50 min",
-    description:
-      "Precise mat pilates for posture, control and quiet core strength. Small movements, full attention.",
-  },
-  {
-    number: "03",
-    icon: "standing",
-    name: "Yoga",
-    meta: "Hatha · 60 min",
-    description:
-      "Foundational hatha — breath, alignment and simple, unhurried shapes. A steady place to begin, or to come back to.",
-  },
-  {
-    number: "04",
-    icon: "waves",
-    name: "Soft Flow",
-    meta: "Vinyasa · 60 min",
-    description:
-      "A vinyasa that moves like water. Slow transitions, long exhales, and no rush anywhere in the room.",
-  },
-  {
-    number: "05",
-    icon: "flame",
-    name: "Power Flow",
-    meta: "Vinyasa · 60 min",
-    description:
-      "Strong, rhythmic and warm. For the days you want to sweat, build heat and feel unmistakably alive.",
-  },
-  {
-    number: "06",
-    icon: "moon",
-    name: "Yin Yoga",
-    meta: "Yin · 75 min",
-    description:
-      "Long, quiet holds that reach into connective tissue and the busy mind. The practice of staying.",
-  },
-  {
-    number: "07",
-    icon: "moonStar",
-    name: "Yin & Reiki",
-    meta: "Yin · Reiki · 75 min",
-    description:
-      "Yin shapes held while hands-on Reiki moves through the room. Deep rest with a gentle current underneath.",
-  },
-  {
-    number: "08",
-    icon: "bell",
-    name: "Sound Healing",
-    meta: "Sound · 60 min",
-    description:
-      "Tibetan bowls, gongs, chimes and voice — a live soundscape that shifts your state and quiets the noise.",
-  },
-  {
-    number: "09",
-    icon: "waveform",
-    name: "Sound Bath",
-    meta: "Sound · 60 min",
-    description:
-      "Lie down, close your eyes and let the instruments do the work. An immersion in vibration and rest.",
-  },
-  {
-    number: "10",
-    icon: "coffee",
-    name: "Cacao & Yoga Nidra",
-    meta: "Ceremony · 90 min · Monthly",
-    description:
-      "A warm cup of ceremonial cacao, then guided yoga nidra — sleep-adjacent rest that resets the whole system.",
-  },
-  {
-    number: "11",
-    icon: "baby",
-    name: "Parental Yoga",
-    meta: "Gentle · 60 min",
-    description:
-      "A soft, adaptable practice for parents and parents-to-be — room for your body, your breath and your season of life.",
-  },
-];
-
+export const sessions: Session[] = sessionTypes as Session[];
 export const evenings = {
   label: "Evenings",
   title: "After dark, we slow all the way *down*.",
@@ -223,64 +129,11 @@ export const evenings = {
   cta: { label: "See this week’s evenings", href: "#schedule" },
 };
 
-export const schedule: { label: string; title: string; note: string; days: ScheduleDay[] } = {
+export const schedule = {
   label: "Schedule",
-  title: "This week at the studio.",
-  note: "Reserve by message and we’ll keep a mat for you. The schedule changes monthly — reach out for the current week.",
-  days: [
-    {
-      day: "Sunday",
-      classes: [
-        { time: "07:30", name: "Soft Flow" },
-        { time: "12:30", name: "Pilates" },
-        { time: "19:00", name: "Yin Yoga" },
-      ],
-    },
-    {
-      day: "Monday",
-      classes: [
-        { time: "08:00", name: "Power Flow" },
-        { time: "18:00", name: "Nervous System Reset" },
-        { time: "20:00", name: "Sound Bath", note: "Evening" },
-      ],
-    },
-    {
-      day: "Tuesday",
-      classes: [
-        { time: "07:30", name: "Pilates" },
-        { time: "12:30", name: "Yoga" },
-        { time: "19:30", name: "Soft Flow" },
-      ],
-    },
-    {
-      day: "Wednesday",
-      classes: [
-        { time: "08:00", name: "Power Flow" },
-        { time: "18:00", name: "Yin & Reiki" },
-        { time: "20:00", name: "Cacao & Yoga Nidra", note: "Monthly" },
-      ],
-    },
-    {
-      day: "Thursday",
-      classes: [
-        { time: "07:30", name: "Soft Flow" },
-        { time: "18:00", name: "Pilates" },
-        { time: "19:30", name: "Sound Healing", note: "Evening" },
-      ],
-    },
-    {
-      day: "Friday",
-      note: "One slow class to close the week.",
-      classes: [{ time: "09:00", name: "Soft Flow" }],
-    },
-    {
-      day: "Saturday",
-      note: "Rest day — the studio is quiet.",
-      classes: [],
-    },
-  ],
+  title: "Upcoming sessions.",
+  note: "One-time sessions, added a few weeks ahead. Reserve by message and we’ll keep a mat for you.",
 };
-
 export const pricing: { label: string; title: string; note: string; options: PricingOption[] } = {
   label: "Pricing",
   title: "Simple, honest pricing.",

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { UiIcon } from "@/components/icons";
+import { HeaderAuth } from "@/components/auth/HeaderAuth";
 import { booking, nav, studio } from "@/content/site";
 
 export function Header() {
@@ -60,6 +61,9 @@ export function Header() {
                 {item.label}
               </a>
             ))}
+<Suspense fallback={null}>
+            <HeaderAuth />
+          </Suspense>
             <a
               href={booking.href}
               className="label rounded-full border border-ink px-5 py-2.5 text-ink transition-colors hover:bg-ink hover:text-ivory"
@@ -125,7 +129,12 @@ export function Header() {
             >
               {booking.label}
             </a>
-            <div className="flex flex-col gap-2.5 text-sm text-stone">
+<div className="mt-8 border-t border-hairline pt-8">
+              <Suspense fallback={null}>
+                <HeaderAuth variant="mobile" />
+              </Suspense>
+            </div>
+                        <div className="flex flex-col gap-2.5 text-sm text-stone">
               <a href={`mailto:${studio.email}`} className="flex items-center gap-2.5 hover:text-ink">
                 <UiIcon name="mail" className="h-4 w-4" />
                 {studio.email}

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "nervous-system-reset",
+    "number": "01",
+    "name": "Nervous System Reset",
+    "meta": "Restorative · 60 min",
+    "icon": "wind",
+    "description": "Breath-led, floor-based and deliberately slow. Unwind the jaw and shoulders, and let your body remember what settled feels like."
+  },
+  {
+    "id": "pilates",
+    "number": "02",
+    "name": "Pilates",
+    "meta": "Mat · 50 min",
+    "icon": "stretch",
+    "description": "Precise mat pilates for posture, control and quiet core strength. Small movements, full attention."
+  },
+  {
+    "id": "yoga",
+    "number": "03",
+    "name": "Yoga",
+    "meta": "Hatha · 60 min",
+    "icon": "standing",
+    "description": "Foundational hatha — breath, alignment and simple, unhurried shapes. A steady place to begin, or to come back to."
+  },
+  {
+    "id": "soft-flow",
+    "number": "04",
+    "name": "Soft Flow",
+    "meta": "Vinyasa · 60 min",
+    "icon": "waves",
+    "description": "A vinyasa that moves like water. Slow transitions, long exhales, and no rush anywhere in the room."
+  },
+  {
+    "id": "power-flow",
+    "number": "05",
+    "name": "Power Flow",
+    "meta": "Vinyasa · 60 min",
+    "icon": "flame",
+    "description": "Strong, rhythmic and warm. For the days you want to sweat, build heat and feel unmistakably alive."
+  },
+  {
+    "id": "yin-yoga",
+    "number": "06",
+    "name": "Yin Yoga",
+    "meta": "Yin · 75 min",
+    "icon": "moon",
+    "description": "Long, quiet holds that reach into connective tissue and the busy mind. The practice of staying."
+  },
+  {
+    "id": "yin-reiki",
+    "number": "07",
+    "name": "Yin & Reiki",
+    "meta": "Yin · Reiki · 75 min",
+    "icon": "moonStar",
+    "description": "Yin shapes held while hands-on Reiki moves through the room. Deep rest with a gentle current underneath."
+  },
+  {
+    "id": "sound-healing",
+    "number": "08",
+    "name": "Sound Healing",
+    "meta": "Sound · 60 min",
+    "icon": "bell",
+    "description": "Tibetan bowls, gongs, chimes and voice — a live soundscape that shifts your state and quiets the noise."
+  },
+  {
+    "id": "sound-bath",
+    "number": "09",
+    "name": "Sound Bath",
+    "meta": "Sound · 60 min",
+    "icon": "waveform",
+    "description": "Lie down, close your eyes and let the instruments do the work. An immersion in vibration and rest."
+  },
+  {
+    "id": "cacao-yoga-nidra",
+    "number": "10",
+    "name": "Cacao & Yoga Nidra",
+    "meta": "Ceremony · 90 min · Monthly",
+    "icon": "coffee",
+    "description": "A warm cup of ceremonial cacao, then guided yoga nidra — sleep-adjacent rest that resets the whole system."
+  },
+  {
+    "id": "parental-yoga",
+    "number": "11",
+    "name": "Parental Yoga",
+    "meta": "Gentle · 60 min",
+    "icon": "baby",
+    "description": "A soft, adaptable practice for parents and parents-to-be — room for your body, your breath and your season of life."
+  }
+]

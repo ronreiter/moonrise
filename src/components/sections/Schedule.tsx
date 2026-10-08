@@ -1,7 +1,12 @@
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-import { bookingHref, schedule } from "@/content/site";
+import { SessionList } from "@/components/SessionList";
+import { booking, schedule } from "@/content/site";
+import { getUpcomingSessions } from "@/lib/data";
 
-export function Schedule() {
+export async function Schedule() {
+  const sessions = await getUpcomingSessions(6);
+
   return (
     <section id="schedule" className="py-24 md:py-36">
       <div className="container-x">
@@ -20,43 +25,34 @@ export function Schedule() {
         </div>
 
         <Reveal delay={150}>
-          <div className="mt-16 border-t border-hairline">
-            {schedule.days.map((day) => (
-              <div
-                key={day.day}
-                className="grid gap-x-10 border-b border-hairline py-8 md:grid-cols-[9rem_1fr] md:py-10"
+          <div className="mt-16" id="upcoming">
+            <SessionList
+              sessions={sessions}
+              empty="No sessions are scheduled right now — check back soon."
+            />
+          </div>
+
+          <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5">
+            <Link
+              href="/schedule"
+              className="group/link inline-flex items-center gap-2 text-sm font-medium text-ink"
+            >
+              <span className="underline decoration-clay decoration-1 underline-offset-8 transition-colors group-hover/link:decoration-ink">
+                See the full schedule
+              </span>
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover/link:translate-x-1"
               >
-                <p className="label pt-1 text-stone">{day.day}</p>
-                <div className="mt-5 md:mt-0">
-                  {day.classes.length > 0 ? (
-                    day.classes.map((item) => (
-                      <div
-                        key={`${item.time}-${item.name}`}
-                        className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-hairline py-3 first:pt-0 last:border-none last:pb-0"
-                      >
-                        <div className="flex items-baseline gap-5">
-                          <span className="w-12 shrink-0 text-sm tabular-nums text-stone">
-                            {item.time}
-                          </span>
-                          <span className="font-serif text-xl leading-snug">{item.name}</span>
-                          {item.note ? (
-                            <span className="label text-stone/60">{item.note}</span>
-                          ) : null}
-                        </div>
-                        <a
-                          href={bookingHref(`Booking — ${item.name}, ${day.day} ${item.time}`)}
-                          className="label text-stone underline-offset-4 transition-colors hover:text-ink hover:underline"
-                        >
-                          Reserve
-                        </a>
-                      </div>
-                    ))
-                  ) : (
-                    <p className="text-sm text-stone">{day.note}</p>
-                  )}
-                </div>
-              </div>
-            ))}
+                →
+              </span>
+            </Link>
+            <a
+              href={booking.href}
+              className="label rounded-full bg-ink px-7 py-4 text-ivory transition-colors hover:bg-night"
+            >
+              {booking.label}
+            </a>
           </div>
         </Reveal>
       </div>
