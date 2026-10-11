@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/Reveal";
-import { bookingHref, pricing } from "@/content/site";
+import { booking, pricing } from "@/content/site";
 
 export function Pricing() {
   return (
@@ -56,7 +56,9 @@ export function Pricing() {
                 </p>
                 <div className="mt-auto pt-8">
                   <a
-                    href={bookingHref(`${option.name} — Moonrise`)}
+                    href={booking.href}
+                    target="_blank"
+                    rel="noreferrer"
                     className={`label inline-flex rounded-full px-6 py-3.5 transition-colors duration-300 ${
                       option.featured
                         ? "bg-ivory text-night hover:bg-sand"

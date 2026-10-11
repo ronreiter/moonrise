@@ -1,6 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 import { SessionIcon } from "@/components/icons";
-import { bookingHref, sessions } from "@/content/site";
+import { booking, sessions } from "@/content/site";
 
 export function Sessions() {
   return (
@@ -39,7 +39,9 @@ export function Sessions() {
                 <p className="mt-3 text-sm leading-relaxed text-stone">{session.description}</p>
                 <div className="mt-auto pt-8">
                   <a
-                    href={bookingHref(`Booking — ${session.name}`)}
+                    href={booking.href}
+                    target="_blank"
+                    rel="noreferrer"
                     className="group/link inline-flex items-center gap-2 text-sm font-medium text-ink"
                   >
                     <span className="underline decoration-clay decoration-1 underline-offset-8 transition-colors group-hover/link:decoration-ink">

@@ -1,9 +1,8 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { UiIcon } from "@/components/icons";
-import { HeaderAuth } from "@/components/auth/HeaderAuth";
 import { booking, nav, studio } from "@/content/site";
 
 export function Header() {
@@ -61,11 +60,10 @@ export function Header() {
                 {item.label}
               </a>
             ))}
-<Suspense fallback={null}>
-            <HeaderAuth />
-          </Suspense>
             <a
               href={booking.href}
+              target="_blank"
+              rel="noreferrer"
               className="label rounded-full border border-ink px-5 py-2.5 text-ink transition-colors hover:bg-ink hover:text-ivory"
             >
               Book
@@ -124,21 +122,14 @@ export function Header() {
           <div className="mt-12 flex flex-col gap-5">
             <a
               href={booking.href}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setOpen(false)}
               className="label inline-flex w-fit rounded-full bg-ink px-6 py-3.5 text-ivory"
             >
               {booking.label}
             </a>
-<div className="mt-8 border-t border-hairline pt-8">
-              <Suspense fallback={null}>
-                <HeaderAuth variant="mobile" />
-              </Suspense>
-            </div>
-                        <div className="flex flex-col gap-2.5 text-sm text-stone">
-              <a href={`mailto:${studio.email}`} className="flex items-center gap-2.5 hover:text-ink">
-                <UiIcon name="mail" className="h-4 w-4" />
-                {studio.email}
-              </a>
+            <div className="flex flex-col gap-2.5 text-sm text-stone">
               <a
                 href={studio.instagramUrl}
                 target="_blank"
@@ -147,6 +138,15 @@ export function Header() {
               >
                 <UiIcon name="instagram" className="h-4 w-4" />
                 {studio.instagram}
+              </a>
+              <a
+                href={studio.arboxUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2.5 hover:text-ink"
+              >
+                <UiIcon name="calendar" className="h-4 w-4" />
+                moonrisetlv.arboxapp.com
               </a>
             </div>
           </div>

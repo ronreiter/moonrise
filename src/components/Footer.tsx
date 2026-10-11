@@ -14,6 +14,8 @@ export function Footer() {
             <p className="mt-6 max-w-xs text-sm leading-relaxed">{footer.tagline}</p>
             <a
               href={booking.href}
+              target="_blank"
+              rel="noreferrer"
               className="label mt-8 inline-flex rounded-full border border-ivory/30 px-5 py-2.5 text-ivory transition-colors hover:bg-ivory hover:text-night"
             >
               {booking.label}
@@ -30,23 +32,12 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a href="/login" className="transition-colors hover:text-ivory">
-                  Studio login
-                </a>
-              </li>
             </ul>
           </nav>
 
           <div>
             <p className="label text-ivory/50">{footer.contactLabel}</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li className="flex items-center gap-2.5">
-                <UiIcon name="mail" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />
-                <a href={`mailto:${studio.email}`} className="transition-colors hover:text-ivory">
-                  {studio.email}
-                </a>
-              </li>
               <li className="flex items-center gap-2.5">
                 <UiIcon name="instagram" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />
                 <a
@@ -59,8 +50,15 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <UiIcon name="phone" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />
-                {studio.whatsapp}
+                <UiIcon name="calendar" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />
+                <a
+                  href={studio.arboxUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-ivory"
+                >
+                  Book on Arbox
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <UiIcon name="pin" className="h-3.5 w-3.5 shrink-0 text-ivory/50" />

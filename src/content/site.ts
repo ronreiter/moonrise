@@ -13,7 +13,7 @@ export type SessionIconName =
   | "coffee"
   | "baby";
 
-export type UiIconName = "mail" | "instagram" | "phone" | "pin" | "clock";
+export type UiIconName = "instagram" | "calendar" | "pin" | "clock";
 
 export type Session = {
   number: string;
@@ -41,10 +41,9 @@ export const studio = {
   tagline: "Yoga, Pilates & Sound — Tel Aviv",
   description:
     "Moonrise is a calm studio for movement and deep rest in Tel Aviv — yoga, pilates, sound evenings and space to land.",
-  email: "hello@moonrisetlv.com",
   instagram: "@moonrisetlv",
   instagramUrl: "https://instagram.com/moonrisetlv",
-  whatsapp: "+972 50-000-0000",
+  arboxUrl: "https://moonrisetlv.arboxapp.com",
   hours: [
     { days: "Sun–Thu", time: "07:00–21:00" },
     { days: "Friday", time: "07:00–14:00" },
@@ -52,15 +51,9 @@ export const studio = {
   ],
 };
 
-export function bookingHref(subject?: string) {
-  const base = `mailto:${studio.email}`;
-  const text = subject ?? "Class booking — Moonrise";
-  return `${base}?subject=${encodeURIComponent(text)}`;
-}
-
 export const booking = {
   label: "Book a class",
-  href: bookingHref("Class booking — Moonrise"),
+  href: studio.arboxUrl,
 };
 
 export const nav = [
@@ -132,7 +125,7 @@ export const evenings = {
 export const schedule = {
   label: "Schedule",
   title: "Upcoming sessions.",
-  note: "One-time sessions, added a few weeks ahead. Reserve by message and we’ll keep a mat for you.",
+  note: "Our full schedule and booking live on Arbox — see what’s coming up and reserve your mat in a tap.",
 };
 export const pricing: { label: string; title: string; note: string; options: PricingOption[] } = {
   label: "Pricing",
@@ -176,9 +169,8 @@ export const visit = {
     "The full address and directions are shared when you book — or message us and we’ll send you the way.",
   contactLabel: "Say hello",
   rows: [
-    { label: "Email", icon: "mail" as const, value: studio.email, href: bookingHref("Hello Moonrise") },
     { label: "Instagram", icon: "instagram" as const, value: studio.instagram, href: studio.instagramUrl },
-    { label: "WhatsApp", icon: "phone" as const, value: studio.whatsapp },
+    { label: "Booking", icon: "calendar" as const, value: "moonrisetlv.arboxapp.com", href: studio.arboxUrl },
   ],
   hoursLabel: "Studio hours",
 };

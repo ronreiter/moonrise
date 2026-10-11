@@ -3,15 +3,14 @@ import {
   AudioWaveform,
   Baby,
   Bell,
+  CalendarDays,
   Clock,
   Coffee,
   Flame,
-  Mail,
   MapPin,
   Moon,
   MoonStar,
   PersonStanding,
-  Phone,
   StretchHorizontal,
   Waves,
   Wind,
@@ -58,9 +57,8 @@ const sessionIcons: Record<SessionIconName, ComponentType<GlyphProps>> = {
 };
 
 const uiIcons: Record<UiIconName, ComponentType<GlyphProps>> = {
-  mail: Mail,
   instagram: InstagramGlyph,
-  phone: Phone,
+  calendar: CalendarDays,
   pin: MapPin,
   clock: Clock,
 };

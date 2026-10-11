@@ -1,12 +1,7 @@
-import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-import { SessionList } from "@/components/SessionList";
-import { booking, schedule } from "@/content/site";
-import { getUpcomingSessions } from "@/lib/data";
+import { booking, schedule, studio } from "@/content/site";
 
-export async function Schedule() {
-  const sessions = await getUpcomingSessions(6);
-
+export function Schedule() {
   return (
     <section id="schedule" className="py-24 md:py-36">
       <div className="container-x">
@@ -25,34 +20,33 @@ export async function Schedule() {
         </div>
 
         <Reveal delay={150}>
-          <div className="mt-16" id="upcoming">
-            <SessionList
-              sessions={sessions}
-              empty="No sessions are scheduled right now — check back soon."
-            />
-          </div>
-
-          <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5">
-            <Link
-              href="/schedule"
-              className="group/link inline-flex items-center gap-2 text-sm font-medium text-ink"
-            >
-              <span className="underline decoration-clay decoration-1 underline-offset-8 transition-colors group-hover/link:decoration-ink">
-                See the full schedule
-              </span>
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-300 group-hover/link:translate-x-1"
+          <div className="mt-16 flex flex-col gap-8 rounded-2xl border border-hairline bg-paper p-8 md:flex-row md:items-center md:justify-between md:p-12">
+            <div>
+              <p className="font-serif text-2xl leading-snug md:text-3xl">
+                The live schedule lives on Arbox.
+              </p>
+              <p className="mt-3 max-w-md text-sm leading-relaxed text-stone">
+                Every class and every evening — with booking and waitlists handled there.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center gap-x-8 gap-y-4">
+              <a
+                href={booking.href}
+                target="_blank"
+                rel="noreferrer"
+                className="label rounded-full bg-ink px-7 py-4 text-ivory transition-colors hover:bg-night"
               >
-                →
-              </span>
-            </Link>
-            <a
-              href={booking.href}
-              className="label rounded-full bg-ink px-7 py-4 text-ivory transition-colors hover:bg-night"
-            >
-              {booking.label}
-            </a>
+                {booking.label}
+              </a>
+              <a
+                href={studio.instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="label text-stone underline-offset-4 transition-colors hover:text-ink hover:underline"
+              >
+                {studio.instagram}
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>

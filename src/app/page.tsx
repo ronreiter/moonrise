@@ -15,7 +15,6 @@ const structuredData = {
   name: studio.name,
   description: studio.description,
   url: SITE_URL,
-  email: studio.email,
   sameAs: [studio.instagramUrl],
   address: {
     "@type": "PostalAddress",
